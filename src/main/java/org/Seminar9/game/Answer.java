@@ -1,22 +1,17 @@
-package org.Seminar9.CowsAndBulls;
+package org.Seminar9.game;
 
 import lombok.AllArgsConstructor;
-
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-
+@Builder
 public class Answer {
     private Integer cows;
     private Integer bulls;
     private String userInput;
 
-    @Override
-    public String toString() {
-        return String.format("В вашем слове %s найдено %d коров и %d быков",userInput,cows,bulls);
-    }
 }

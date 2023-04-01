@@ -69,7 +69,7 @@ public abstract class AbstractGame implements BullsNCows{
         }
         gameStatus = GameStatus.ONGOING;
         gameType.askLength();
-        System.out.println("For debug, загаданное слово: "+word);
+        System.out.println("For debug, загаданное слово: "+word); //debug print
         while(!gameStatus.equals(GameStatus.FINISH)){
             System.out.println("ваш ход");
             String guess=in.next();

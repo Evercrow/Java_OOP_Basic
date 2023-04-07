@@ -1,11 +1,11 @@
 package org.Seminar11.Nesting.SchoolMVC.Model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Student extends User{
 
-    int groupID;
     List<Integer> grades;
 
 
@@ -14,10 +14,11 @@ public class Student extends User{
     }
     public Student(){
         super(new Date(), "студент"+countID);
+        this.grades = new ArrayList<>();
     }
 
     @Override
     public String toString() {
-        return String.format("id=%d,ФИО %s,дата рождения %s,учебная группа %d, оценки: ", ID, fio, datebirth, groupID) + grades.toString();
+        return String.format("id=%d,ФИО %s,дата рождения %s оценки: ", ID, fio, datebirth) + grades.toString();
     }
 }

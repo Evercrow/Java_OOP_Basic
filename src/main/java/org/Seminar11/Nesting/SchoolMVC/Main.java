@@ -16,6 +16,7 @@ public class Main {
     public static void main(String[] args) {
 
         Controller schoolDB = new Controller();
+        schoolDB.start();
 
     }
 

@@ -8,7 +8,7 @@ public abstract class User {
 
     String fio;
     int ID;
-    public static int countID ;
+    public static int countID = 0 ;
 
     public Date getDatebirth() {
         return datebirth;
@@ -17,10 +17,15 @@ public abstract class User {
     public String getFio() {
         return fio;
     }
+
+    public int getID() {
+        return ID;
+    }
+
     public User(Date datebirth, String fio) {
         this.datebirth = datebirth;
         this.fio = fio;
-        this.ID = ++countID;
+        this.ID = countID++;
     }
 
 

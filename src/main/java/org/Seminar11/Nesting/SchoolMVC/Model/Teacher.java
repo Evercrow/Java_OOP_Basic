@@ -1,5 +1,6 @@
 package org.Seminar11.Nesting.SchoolMVC.Model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -16,6 +17,13 @@ public class Teacher extends User{
     public Teacher(){
         super(new Date(), "учитель"+countID);
         this.exp = new Random().nextInt(4);
+        this.groups = new ArrayList<>();
+
+    }
+
+
+    public void setGroups(List<Integer> groups) {
+        this.groups.addAll(groups);
 
     }
 

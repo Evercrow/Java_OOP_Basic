@@ -13,4 +13,17 @@ public class StudyGroup {
         this.groupTeacher = groupTeacher;
         int groupID = ++groupCount;
     }
+
+
+    public List<Student> getGroupStudents() {
+        return groupStudents;
+    }
+
+    public Teacher getGroupTeacher() {
+        return groupTeacher;
+    }
+
+    public int getGroupID() {
+        return groupID;
+    }
 }

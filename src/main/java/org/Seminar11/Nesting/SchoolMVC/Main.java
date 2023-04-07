@@ -20,7 +20,7 @@ public class Main {
 
     }
 
-    //TODO вынести main отдельно
-    // обобщения в списках
-    // менюшка во View
+    //TODO SOLID runover
+    // list id shift after deleting
+
 }

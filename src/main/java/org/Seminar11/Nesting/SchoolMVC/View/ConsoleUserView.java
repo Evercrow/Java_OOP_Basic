@@ -7,10 +7,11 @@ import java.util.List;
 
 public class ConsoleUserView extends UserView implements BasicView{
     StringBuilder sb;
+    //StringBuilder sb = new StringBuilder(); //sb сохраняется между разными instance ConsoleUserView
     ConsoleFormat cf;
     @Override
     public String viewAll(List<User> users) {
-        sb = new StringBuilder();
+        sb = new StringBuilder(); //remove this for sb repeating bug
         cf = new ConsoleFormat();
         for (User u:users
         ){

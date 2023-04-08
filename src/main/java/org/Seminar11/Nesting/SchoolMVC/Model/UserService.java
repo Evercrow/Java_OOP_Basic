@@ -1,14 +1,14 @@
 package org.Seminar11.Nesting.SchoolMVC.Model;
 
 import java.util.List;
-// страдает принцип D  - зависим от конкретных классов. Лучше проверять только верхний уровень User, а создавать динамически в зависимости от входного класса
-// нашел newInstance() , но он "устаревший", зато просто и  работает :)
-// плюс, обобщение с ограничением позволит избежать лишней проверки типа
-public class UserService<U extends User> implements DataService<U> {
+
+//у класса теперь есть возможность подключать желаемые интерфейсы. При дальнейшем разделении можно будет легко перенести имплементацию и отключить ненужный интерфейс.
+public class UserService<U extends User> implements DataService,ReadableUser<U>,CreatableUser<U> {
+
 
     @Override
     public User create(U schoolMember){
-
+     //метод create теперь не перебирает instanceof, а может создавать любого пользователя с родителем User
         try {
             return schoolMember.getClass().newInstance();
         } catch(Exception e) {

@@ -1,6 +1,6 @@
 package org.Seminar11.Nesting.SchoolMVC;
 
-import org.Seminar11.Nesting.SchoolMVC.Controller.Controller;
+import org.Seminar11.Nesting.SchoolMVC.Controller.ConsoleMenu;
 
 /**
  * 1. Создать класс УчебнаяГруппа содержащая в себе поля Преподаватель и список Студентов
@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Controller schoolDB = new Controller();
+        ConsoleMenu schoolDB = new ConsoleMenu();
         schoolDB.start();
 
     }

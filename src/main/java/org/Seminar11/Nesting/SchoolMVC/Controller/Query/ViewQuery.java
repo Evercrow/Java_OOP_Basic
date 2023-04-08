@@ -1,12 +1,12 @@
 package org.Seminar11.Nesting.SchoolMVC.Controller.Query;
 
-import org.Seminar11.Nesting.SchoolMVC.Model.User;
-import org.Seminar11.Nesting.SchoolMVC.View.UserView;
+import org.Seminar11.Nesting.SchoolMVC.Model.Core.User;
+import org.Seminar11.Nesting.SchoolMVC.View.ConsoleUserView;
 
 import java.util.List;
 
 public class ViewQuery implements MenuOption {
-    static UserView show = new UserView();
+    static ConsoleUserView show = new ConsoleUserView();
     @Override
     public String menuDescription() {
         return "Просмотр пользователей";
@@ -18,7 +18,7 @@ public class ViewQuery implements MenuOption {
     }
 
     List<User> showAllConsole(List<User> users) {
-        System.out.println(show.consoleViewAll(users));
+        System.out.println(show.viewAll(users));
         return users;
     }
 }

@@ -1,7 +1,7 @@
 package org.Seminar11.Nesting.SchoolMVC.Controller.Query;
 
 import org.Seminar11.Nesting.SchoolMVC.Controller.ConsoleMenu;
-import org.Seminar11.Nesting.SchoolMVC.Model.User;
+import org.Seminar11.Nesting.SchoolMVC.Model.Core.User;
 
 import java.util.List;
 

@@ -1,15 +1,23 @@
 package org.Seminar11.Nesting.SchoolMVC.Controller.Query;
 
 import org.Seminar11.Nesting.SchoolMVC.Controller.ConsoleMenu;
-import org.Seminar11.Nesting.SchoolMVC.Model.*;
-import org.Seminar11.Nesting.SchoolMVC.View.UserView;
+import org.Seminar11.Nesting.SchoolMVC.Model.Core.Student;
+import org.Seminar11.Nesting.SchoolMVC.Model.Core.StudyGroup;
+import org.Seminar11.Nesting.SchoolMVC.Model.Core.Teacher;
+import org.Seminar11.Nesting.SchoolMVC.Model.Core.User;
+import org.Seminar11.Nesting.SchoolMVC.Model.Service.Groups.StudyGroupCreate;
+import org.Seminar11.Nesting.SchoolMVC.Model.Service.Users.UserIdServer;
+import org.Seminar11.Nesting.SchoolMVC.View.ConsoleUserView;
+import org.Seminar11.Nesting.SchoolMVC.View.GroupView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CreateGroupQuery implements MenuOption {
 
-    static UserView show = new UserView();
+    static ConsoleUserView show = new ConsoleUserView();
+    static UserIdServer findId = new UserIdServer();
+    static GroupView<Teacher, Student> gShow = new GroupView<>();
     @Override
     public String menuDescription() {
         return "Создать учебную группу";
@@ -17,11 +25,11 @@ public class CreateGroupQuery implements MenuOption {
 
     @Override
     public List<User> action(List<User> users) {
-        System.out.println(show.consoleViewSpecific(users,show.getAllTeacherID(users)));
+        System.out.println(show.viewSpecific(users,findId.getAllTeacherID(users)));
         System.out.println("Выберите учителя через ID");
-        StudyGroup<Teacher, Student> stGroup = newGroup(ConsoleMenu.input.nextInt(), show.getAllStudentID(users),users);
+        StudyGroup<Teacher, Student> stGroup = newGroup(ConsoleMenu.input.nextInt(), findId.getAllStudentID(users),users);
         System.out.println("Была создана такая группа:");
-        System.out.println(show.groupView(stGroup));
+        System.out.println(gShow.groupView(stGroup));
 
         return users;
     }

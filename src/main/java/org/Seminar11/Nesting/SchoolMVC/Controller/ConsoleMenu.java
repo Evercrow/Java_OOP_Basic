@@ -4,8 +4,7 @@ import org.Seminar11.Nesting.SchoolMVC.Controller.Query.AddQuery;
 import org.Seminar11.Nesting.SchoolMVC.Controller.Query.CreateGroupQuery;
 import org.Seminar11.Nesting.SchoolMVC.Controller.Query.DeleteQuery;
 import org.Seminar11.Nesting.SchoolMVC.Controller.Query.ViewQuery;
-import org.Seminar11.Nesting.SchoolMVC.Model.*;
-import org.Seminar11.Nesting.SchoolMVC.View.UserView;
+import org.Seminar11.Nesting.SchoolMVC.Model.Core.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +24,6 @@ public class ConsoleMenu {
 
     public void start(){
 
-
-
-        UserService<User> us = new UserService();
         List<User> users = new ArrayList<>();
         menu: while(true){
             System.out.println("-------");

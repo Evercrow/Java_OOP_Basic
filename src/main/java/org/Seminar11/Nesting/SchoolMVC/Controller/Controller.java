@@ -8,6 +8,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+// S - контроллер сейчас имеет слишком много разной логики. Нужно оставить только консольный прием, вывод менюшек, и аггрегацию нужных методов из других классов нашей программы
+// O - по открытости-закрытости  сделать в выоде меню больше абстракции, чтобы можно было добавлять новые опции в меню и менять сообщения, не залезая в start()
+// L  - сам контроллер без иерархии наследников, поэтому данный принцип пока тут не применим.
+// I - сегрегация интерфейсав - может понадобится при абстракции взаимодействия с пользователем и хранения БД
+// D - Прицип инверсии зависимостей .Здесь принцип уже выполняется, так как единственная  зависимость у нас на User , который явялется для нас достаточно универсальной абстракцией
 public class Controller {
 
 
@@ -55,7 +60,7 @@ public class Controller {
                 case 4:
                     System.out.println(show.consoleViewSpecific(users,show.getAllTeacherID(users)));
                     System.out.println("Выберите учителя через ID");
-                    StudyGroup stGroup = newGroup(input.nextInt(), show.getAllStudentID(users),users);
+                    StudyGroup<Teacher,Student> stGroup = newGroup(input.nextInt(), show.getAllStudentID(users),users);
                     System.out.println("Была создана такая группа:");
                     System.out.println(show.groupView(stGroup));
                     break;

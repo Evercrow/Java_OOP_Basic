@@ -20,6 +20,9 @@ public class Main {
 
     }
 
-    //TODO SOLID runover
+    //TODO убрать "божественность" Controller, UserView
+    // cущности на пункты меню, форматирования строки вывода
+    // разделение интерфейсов в Service-классах
+
 
 }

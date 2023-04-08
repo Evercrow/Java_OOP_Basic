@@ -21,6 +21,5 @@ public class Main {
     }
 
     //TODO SOLID runover
-    // list id shift after deleting
 
 }

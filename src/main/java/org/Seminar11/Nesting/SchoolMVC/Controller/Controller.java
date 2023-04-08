@@ -49,9 +49,8 @@ public class Controller {
                     System.out.println(show.consoleViewAll(users));
                     break;
                 case 3:
-                    System.out.println("Not implemented yet"); //out of bounds error for list storage
-//                    System.out.println("Введите id удаляемого пользователя");
-//                    users.remove(input.nextInt());
+                    System.out.println("Введите id удаляемого пользователя");
+                    users = removeUser(input.nextInt(),users);
                     break;
                 case 4:
                     System.out.println(show.consoleViewSpecific(users,show.getAllTeacherID(users)));
@@ -65,31 +64,36 @@ public class Controller {
                     break menu;
             }
         }
-
-
-
-
-
-
-
-
     }
 
     /**
      Создать метод в Контроллере, в котором агрегируются функции получения списка студентов (их id) и
      преподавателя (его id) и формирования учебной группы, путем вызова метода из сервиса
      */
-    StudyGroup newGroup(int tID,List<Integer>studentsID, List<User> db){
-            StudyGroupService gs = new StudyGroupService();
-            Teacher teach =(Teacher) db.get(tID);
-            List<Student> students = new ArrayList<>();
-        for (int id: studentsID){
+    StudyGroup newGroup(int tID, List<Integer> studentsID, List<User> db) {
+        StudyGroupService gs = new StudyGroupService();
+        Teacher teach = (Teacher) db.get(tID);
+        List<Student> students = new ArrayList<>();
+
+        for (int id : studentsID){
             students.add((Student) db.get(id));
         }
-            StudyGroup formed  = gs.formGroup(teach,students);
-            teach.setGroups(List.of(formed.getGroupID()));
-            return formed;
 
+        StudyGroup formed = gs.formGroup(teach, students);
+        teach.setGroups(List.of(formed.getGroupID()));
+        return formed;
+
+    }
+
+    List<User> removeUser(int id, List<User> db){
+        System.out.println("Введите id удаляемого пользователя");
+        db.remove(id);
+        int currId = 0;
+        for (int i = id; i < db.size(); i++){
+            currId = db.get(i).getID();
+            db.get(i).setID(currId-1);
+        }
+        return db;
     }
 
 }

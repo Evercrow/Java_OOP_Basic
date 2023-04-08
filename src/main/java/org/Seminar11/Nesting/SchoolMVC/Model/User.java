@@ -22,6 +22,10 @@ public abstract class User {
         return ID;
     }
 
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
     public User(Date datebirth, String fio) {
         this.datebirth = datebirth;
         this.fio = fio;

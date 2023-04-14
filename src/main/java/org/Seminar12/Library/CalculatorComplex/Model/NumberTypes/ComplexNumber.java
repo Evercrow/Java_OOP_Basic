@@ -20,22 +20,6 @@ public class ComplexNumber extends NumberClass{
     }
 
 
-
-    public void setRealPart(double realPart) {
-        this.realPart = realPart;
-    }
-
-    public void setImaginaryPart(double imaginaryPart) {
-        this.imaginaryPart = imaginaryPart;
-    }
-
-    public double getImaginaryPart() {
-        return this.imaginaryPart;
-    }
-    public double getRealPart() {
-        return this.realPart;
-    }
-
     @Override
     public ComplexNumber add(ComplexNumber y) {
         return new ComplexNumber(this.realPart+y.realPart,this.imaginaryPart+y.imaginaryPart) ;

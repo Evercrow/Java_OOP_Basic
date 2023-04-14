@@ -1,7 +1,7 @@
 package org.Seminar12.Library.CalculatorComplex.Controller;
 
 import org.Seminar12.Library.CalculatorComplex.Model.Calculation;
-import org.Seminar12.Library.CalculatorComplex.Model.Logger;
+import org.Seminar12.Library.CalculatorComplex.Model.CalcLogger;
 import org.Seminar12.Library.CalculatorComplex.Model.NumberParser;
 import org.Seminar12.Library.CalculatorComplex.Model.NumberTypes.ComplexNumber;
 import org.Seminar12.Library.CalculatorComplex.Model.NumberTypes.NumberClass;
@@ -17,7 +17,6 @@ public class ConsoleInput<N extends NumberClass> extends CalcControl<N> implemen
     CalcConsoleView view = new CalcConsoleView();
 
     Calculation<N> calc = new Calculation<>();
-    Logger log = new Logger();
     boolean running = true;
     public  NumberClass storedResult;
 
@@ -34,6 +33,7 @@ public class ConsoleInput<N extends NumberClass> extends CalcControl<N> implemen
             String operand = getOperation();
             storedResult = calc.runOperation(storedResult,getUserNumber(),operand) ;
             view.showResult(storedResult);
+
         }
 
 

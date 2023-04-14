@@ -1,6 +1,8 @@
 package org.Seminar12.Library.CalculatorComplex;
 
 import org.Seminar12.Library.CalculatorComplex.Controller.CalcControl;
+import org.Seminar12.Library.CalculatorComplex.Model.NumberTypes.ComplexNumber;
+
 
 /**
  * Создать проект калькулятора комплексных чисел (достаточно сделать сложение, умножение и деление).
@@ -11,8 +13,11 @@ import org.Seminar12.Library.CalculatorComplex.Controller.CalcControl;
  */
 public class Main {
     public static void main(String[] args) {
-       // "src/main/java/org/Seminar12/Library/Homework/Main.java"
-        CalcControl  calc = new CalcControl();
-        calc.start();
+
+        CalcControl<ComplexNumber>  calc = new CalcControl<>();
+        calc.startConsoleUI();
+
+
     }
+    //ToDo обработка ошибок ввода мягким вариантом, преобразование под капотом мелочей вроде "+-i"
 }

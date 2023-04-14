@@ -6,4 +6,11 @@ public interface InputHandler {
 
     NumberClass getUserNumber();
     String getOperation();
+
+    /**
+     * Аналог кнопки "C" на обычном калькуляторе, сброс предыдущего результата
+     */
+    void reset();
+
+    boolean end();
 }
